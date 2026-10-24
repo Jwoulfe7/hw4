@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>App Check · Yale Bulldog Blue by Campus Customs</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Oswald:wght@500;600;700&family=Pinyon+Script&display=swap" />
+<style>
+  :root {
+    --navy: #14213d; --red: #b23a2e; --sailcloth: #f5efe2; --paper: #fffdf8; --brass: #c9a66b;
+    --ink: #1d2433; --muted: #646b78; --line: #ddd3bf; --green: #2f6b45;
+    --display: 'Oswald', 'Avenir Next Condensed', 'Arial Narrow', sans-serif;
+    --serif: 'Libre Caslon Text', Baskerville, Georgia, serif;
+    --script: 'Pinyon Script', 'Snell Roundhand', cursive;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; color: var(--ink); font: 16px/1.6 system-ui, -apple-system, 'Segoe UI', sans-serif;
+    background:
+      repeating-linear-gradient(0deg, rgba(20,33,61,.022) 0 1px, transparent 1px 3px),
+      repeating-linear-gradient(90deg, rgba(20,33,61,.022) 0 1px, transparent 1px 3px), var(--sailcloth);
+  }
+  .rope { height: 7px; background: repeating-linear-gradient(-55deg, var(--brass) 0 5px, #a8854d 5px 7px, #e2c99a 7px 10px); }
+  header.masthead { background: var(--navy); color: var(--sailcloth); text-align: center; padding: 2.4rem 1rem 2rem; }
+  .masthead .kicker { font: italic 1.05rem var(--serif); color: var(--brass); margin: 0; }
+  .masthead h1 { font: 700 clamp(2.2rem, 5vw, 3.4rem)/1.05 var(--display); text-transform: uppercase; letter-spacing: .04em; margin: .3rem 0 .6rem; color: #fff; }
+  .masthead p { margin: 0 auto; max-width: 44rem; color: rgba(245,239,226,.85); }
+  main { max-width: 980px; margin: 0 auto; padding: 2rem 1.25rem 3rem; }
+  .meta { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: .6rem; margin: 0 0 2rem; }
+  .meta div { background: var(--paper); border: 1px solid var(--line); padding: .6rem .8rem; font-size: .88rem; }
+  .meta strong { display: block; font: 600 .68rem var(--display); letter-spacing: .18em; text-transform: uppercase; color: var(--red); }
+  table.summary { width: 100%; border-collapse: collapse; background: var(--paper); border: 1px solid var(--line); margin-bottom: 2.5rem; }
+  .summary th, .summary td { padding: .65rem .8rem; text-align: left; border-bottom: 1px solid var(--line); font-size: .95rem; }
+  .summary th { font: 600 .72rem var(--display); letter-spacing: .16em; text-transform: uppercase; color: var(--navy); background: #f3ecdd; }
+  .pass { display: inline-block; background: var(--green); color: #fff; font: 700 .72rem var(--display); letter-spacing: .14em; padding: .15rem .55rem; text-transform: uppercase; }
+  section.check { background: var(--paper); border: 1px solid var(--line); border-top: 6px solid var(--navy); padding: 1.8rem 1.8rem 1.5rem; margin-bottom: 2.6rem; box-shadow: 8px 8px 0 #ebe2cf; }
+  .check-num { margin: 0; font: italic 1rem var(--serif); color: var(--red); }
+  .check h2 { margin: .1rem 0 .3rem; font: 700 1.9rem/1.1 var(--display); text-transform: uppercase; letter-spacing: .03em; color: var(--navy); }
+  .check .ask { margin: 0 0 1.2rem; font-size: .95rem; color: var(--muted); }
+  .check .ask code { font-size: .9em; background: #f3ecdd; padding: .05rem .3rem; }
+  figure { margin: 0 0 1.2rem; }
+  figure img { display: block; width: 100%; height: auto; border: 1px solid var(--line); box-shadow: 0 10px 24px rgba(13,23,48,.15); }
+  figcaption { margin-top: .55rem; font: italic .92rem var(--serif); color: var(--muted); }
+  figcaption strong { font: 600 .7rem var(--display); letter-spacing: .16em; text-transform: uppercase; color: var(--navy); font-style: normal; margin-right: .35rem; }
+  .proves { border-left: 4px solid var(--green); background: #eef3ee; padding: .75rem 1rem; margin: 0 0 1rem; }
+  .proves strong, .evidence strong { font: 600 .72rem var(--display); letter-spacing: .16em; text-transform: uppercase; color: var(--green); display: block; }
+  .evidence { border-left: 4px solid var(--brass); background: #fbf6ea; padding: .75rem 1rem; margin: 0 0 1.2rem; font-size: .92rem; }
+  .evidence strong { color: #8a6a2f; }
+  .evidence code { font-size: .88em; }
+  .compliment { margin: 0; padding: 1rem 1.2rem; background: var(--navy); color: var(--sailcloth); position: relative; }
+  .compliment::before { content: 'The Handbook remarks'; display: block; font: 1.4rem/1 var(--script); color: var(--brass); margin-bottom: .35rem; }
+  .compliment p { margin: 0; font: italic 1.02rem/1.55 var(--serif); }
+  footer { text-align: center; padding: 1.5rem 1rem 2.5rem; color: var(--muted); font: italic .9rem var(--serif); }
+  footer .signoff { font: 1.7rem var(--script); color: var(--navy); font-style: normal; display: block; margin-bottom: .3rem; }
+  @media (max-width: 640px) { section.check { padding: 1.2rem; } }
+</style>
+</head>
+<body>
+<div class="rope"></div>
+<header class="masthead">
+  <p class="kicker">Yale Bulldog Blue · by Campus Customs</p>
+  <h1>The App Check</h1>
+  <p>Three checks of the live storefront, each with a screenshot, what it proves, and a word from the Handbook. Every number below was checked against <code>data/campus_customs.db</code>.</p>
+</header>
+<div class="rope"></div>
+
+<main>
+  <div class="meta">
+    <div><strong>Tested</strong>October 23, 2026, live in the browser</div>
+    <div><strong>Front end</strong>React + Vite (TypeScript)</div>
+    <div><strong>Backend</strong>FastAPI on <code>:8010</code>, run from <code>backend/</code></div>
+    <div><strong>Agent</strong>PydanticAI · Gemini <code>gemini-3.5-flash-lite</code></div>
+    <div><strong>Shopper</strong>Guest (not logged in), size M on file</div>
+    <div><strong>Data</strong>Live <code>campus_customs.db</code>: catalogue + inventory</div>
+  </div>
+
+  <table class="summary">
+    <thead><tr><th>#</th><th>Check</th><th>Result</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td>The chat checks an item's inventory and price, honestly, from the database</td><td><span class="pass">✓ Pass</span></td></tr>
+      <tr><td>2</td><td>A category question ("What hoodies do you have?") puts product cards on the page</td><td><span class="pass">✓ Pass</span></td></tr>
+      <tr><td>3</td><td>A Problem 9 usability feature: The Valet (instant search, ⌘K or /)</td><td><span class="pass">✓ Pass</span></td></tr>
+    </tbody>
+  </table>
+
+  <!-- ===================================================== CHECK 1 -->
+  <section class="check" id="inventory">
+    <p class="check-num">Check the First</p>
+    <h2>The Bulldog checks the stock room</h2>
+    <p class="ask">On the <strong>Basic Hoodie Big Yale</strong> product page, the shopper asked: <code>How many mediums of this one are left, and what does it cost? Any in XL?</code></p>
+
+    <figure>
+      <img src="app_check_images/inventory.png" alt="Product page for the Basic Hoodie Big Yale with the chat open. The Bulldog replies: only 5 mediums left, it costs $68.00, XL is in stock with just 2 left. A note reads 'Fact-checked against the stock room.'" />
+      <figcaption><strong>Inventory</strong>The chat answers "5 mediums left, $68.00, XL just 2 left" from the database. The page's own size grid agrees (XL "Only 2 left"), and a green note confirms the reply was fact-checked.</figcaption>
+    </figure>
+
+    <div class="proves">
+      <strong>What this proves</strong>
+      The agent looked up live stock and price with its database tools, worked out which item "this one" meant from the page the shopper was on, and reported the exact numbers. The Fact-Checker then confirmed the quoted price matched the catalogue before the reply was shown.
+    </div>
+    <div class="evidence">
+      <strong>The database says</strong>
+      <code>basic-hoodie-big-yale</code>: price <b>68.0</b>; stock XS=15, S=5, <b>M=5</b>, L=8, <b>XL=2</b>, XXL=25. That matches the reply exactly.
+    </div>
+    <blockquote class="compliment"><p>Honest about its inventory the way old families are honest about their boats: it states the facts, gives the exact figure, and never pretends there's one more in the boathouse than there is.</p></blockquote>
+  </section>
+
+  <!-- ===================================================== CHECK 2 -->
+  <section class="check" id="search-cards">
+    <p class="check-num">Check the Second</p>
+    <h2>Ask about hoodies, and the cards appear</h2>
+    <p class="ask">From the Home page, the shopper asked the chat: <code>What hoodies do you have?</code></p>
+
+    <figure>
+      <img src="app_check_images/hoodies_chat.png" alt="The Bulldog's Picks shelf titled 'Hoodies' with numbered hoodie cards, next to the chat panel showing the question, the reply, thumbnails, and 'See all 6 on the page'." />
+      <figcaption><strong>Question → cards</strong>The question in the chat and the result on the page together: the agent's structured product matches arrive as the "Bulldog's Picks" shelf, titled "Hoodies".</figcaption>
+    </figure>
+    <figure>
+      <img src="app_check_images/hoodies_shelf.png" alt="The full Bulldog's Picks shelf with six numbered hoodie cards, each showing a photo, name, type, price $68.00, size chips and low-stock notes." />
+      <figcaption><strong>The full shelf</strong>Six hoodie cards, each with a photo, name, price, short description, in-stock sizes, and "only a few left" notes. Each one links to its product page.</figcaption>
+    </figure>
+
+    <div class="proves">
+      <strong>What this proves</strong>
+      The agent searched the catalogue and returned structured product matches (the API contract). The front end rendered them as product cards on the page itself, not just in the chat. Clicking a card (the Fencing Left Chest Hoodie) still opened the single-item page from Problem 3.
+    </div>
+    <div class="evidence">
+      <strong>The database says</strong>
+      All six cards show <b>$68.00</b>, and their size chips match in-stock inventory exactly. For example, Champion Reverse Weave Hoodie 1 is S, M, L, XXL (XS and XL are sold out), and Fencing Left Chest Hoodie is S, M, XL.
+    </div>
+    <blockquote class="compliment"><p>Six hoodies, laid out like sweaters on the window seat at Mory's: properly folded, correctly priced, and not one of them in a color you'd have to explain at Thanksgiving.</p></blockquote>
+  </section>
+
+  <!-- ===================================================== CHECK 3 -->
+  <section class="check" id="usability">
+    <p class="check-num">Check the Third</p>
+    <h2>The Valet, summoned with a keystroke</h2>
+    <p class="ask">On the Products page, the shopper pressed <code>/</code>, typed <code>saybrook</code>, pressed <code>↓</code> once, then <code>Enter</code>. This is a Problem 9 usability feature; see <code>output/usability.md</code>, §1.</p>
+
+    <figure>
+      <img src="app_check_images/valet.png" alt="The Valet search window over the Products page, showing 'saybrook' typed and three results: Saybrook College Crewneck $58.00, Saybrook Logo T Shirt $32.00 (highlighted), and Saybrook Sweater Fleece Jacket $98.00, each marked 'In your size (M)'." />
+      <figcaption><strong>The Valet</strong>Instant search from any page. All three Saybrook items appear with price and "In your size (M)", the size the shopper put on file with the Tailor's Ledger. The keyboard highlight sits on the second result.</figcaption>
+    </figure>
+
+    <div class="proves">
+      <strong>What this proves</strong>
+      A shopper can get from any page to an exact item in a few keystrokes, with no scrolling and no AI call. Pressing Enter opened <code>/products/saybrook-logo-t-shirt</code>, and the Valet closed itself. The "In your size" tags show the second Problem 9 feature, the Tailor's Ledger, working too.
+    </div>
+    <div class="evidence">
+      <strong>The database says</strong>
+      Saybrook College Crewneck <b>$58.00</b> (M=15), Saybrook Logo T Shirt <b>$32.00</b> (M=12), Saybrook Sweater Fleece Jacket <b>$98.00</b> (M=8). All three are in stock in M, as shown.
+    </div>
+    <blockquote class="compliment"><p>The Valet does what good staff always has: it appears the moment it's summoned, remembers your size without being asked twice, and leaves without a word once you've found what you came for.</p></blockquote>
+  </section>
+</main>
+
+<footer>
+  <span class="signoff">Yours in navy, the Bulldog</span>
+  Screenshots are in <code>app_check_images/</code>. Open this file directly; no server needed.
+</footer>
+<div class="rope"></div>
+</body>
+</html>
