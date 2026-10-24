@@ -112,6 +112,12 @@ These are the prompts I typed to my AI coding assistant (Claude Code), grouped b
 
 > OKay - we're in double digits with 10. Go ALL OUT and make the site feel like a real campus customs storefront, but you've got to lean in HARD to the preppy handbook/KJP aesthetic. it should be pervasive in every element. Go wild with it. I'll be graded on creativity, and innovative design. write output/design.md...it should track what we changed and why it will kep customers stick around and buy. it should be crisp, short, and written in the preppy handbook style.
 
+### Follow-up prompts
+
+> change the element on this site that references my initials - come up with something different. otherwise, this is good.
+
+*What was lacking:* The Monogrammer's example text used my own initials. I wanted something that isn't personal, so it now says "e.g. ELI", a nod to Yale students being called "Elis".
+
 ---
 
 ## Problem 11: Live App Check

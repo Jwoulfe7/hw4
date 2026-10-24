@@ -35,7 +35,7 @@ export default function MonogramControls({
         <input
           value={letters}
           onChange={(e) => setLetters(e.target.value.toUpperCase().replace(/[^A-Z]/g, '').slice(0, 3))}
-          placeholder="Your initials, e.g. JEW"
+          placeholder="Three initials, e.g. ELI"
           maxLength={3}
           aria-label="Your initials (up to three letters)"
         />
